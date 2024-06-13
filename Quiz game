@@ -1,0 +1,107 @@
+def quiz():
+    score = 0
+    
+    # Question 1
+    print("Question 1: What is the capital of France?")
+    answer1 = input("a) Paris\nb) Rome\nc) London\nYour answer: ")
+    if answer1.lower() == "a":
+        print("Correct!")
+        score += 1
+    else:
+        print("Incorrect! The correct answer is Paris.")
+    
+    # Question 2
+    print("\nQuestion 2: What is the largest planet in our solar system?")
+    answer2 = input("a) Earth\nb) Jupiter\nc) Mars\nYour answer: ")
+    if answer2.lower() == "b":
+        print("Correct!")
+        score += 1
+    else:
+        print("Incorrect! The correct answer is Jupiter.")
+    
+    # Question 3
+    print("\nQuestion 3: Who wrote 'Romeo and Juliet'?")
+    answer3 = input("a) William Shakespeare\nb) Jane Austen\nc) Charles Dickens\nYour answer: ")
+    if answer3.lower() == "a":
+        print("Correct!")
+        score += 1
+    else:
+        print("Incorrect! The correct answer is William Shakespeare.")
+    
+    print("\nQuiz completed!")
+    print("Your score is", score, "out of 3.")
+
+quiz()
+
+Basic Quiz Game project in Python.
+
+1. **Define Questions and Options**:
+   
+   We can represent each question as a dictionary where the keys represent the question text, options, and the correct answer. Here's an example:
+
+   ```python
+   questions = [
+       {
+           "question": "What is the capital of France?",
+           "options": ["A. Paris", "B. London", "C. Rome", "D. Berlin"],
+           "answer": "A"
+       },
+       {
+           "question": "Which planet is known as the Red Planet?",
+           "options": ["A. Mars", "B. Jupiter", "C. Saturn", "D. Venus"],
+           "answer": "A"
+       },
+       # Add more questions here
+   ]
+   ```
+
+2. **Implement the Scoring System**:
+
+   Initialize a variable to track the user's score. Increment the score if the user's answer matches the correct answer for each question.
+
+   ```python
+   score = 0
+   ```
+
+3. **Handle User Input**:
+
+   Use a loop to iterate through each question in the `questions` list. Prompt the user to input their answer and validate it.
+
+   ```python
+   for question in questions:
+       print(question["question"])
+       for option in question["options"]:
+           print(option)
+       user_answer = input("Enter your answer (A, B, C, or D): ").upper()
+       # Validate user input here
+   ```
+
+4. **Provide Feedback**:
+
+   Compare the user's input with the correct answer for each question. Provide feedback indicating whether the answer was correct or incorrect.
+
+   ```python
+   if user_answer == question["answer"]:
+       print("Correct!")
+       score += 1
+   else:
+       print("Incorrect. The correct answer is", question["answer"])
+   ```
+
+5. **Display Final Score**:
+
+   Once all questions have been answered, display the user's final score.
+
+   ```python
+   print("Your final score is:", score)
+   ```
+
+6. **Customization**:
+
+   Organize the code in a way that makes it easy to modify the questions, options, and correct answers.
+
+   You can store the questions in a separate file or database and load them dynamically into the program.
+
+7. **Code Structure**:
+
+   Organize the code into functions or classes for better readability and maintainability. You can create functions for displaying questions, validating user input, calculating the score, etc.
